@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(big3.webp);
+            background-repeat: no-repeat;
+            background-size:50%;
+            background-position: left;
+            backdrop-filter: none;
+        }
+
+        .container {
+            max-width: 550px;
+            background-color: rgba(245, 245, 245, 0.72);
+            padding: 20px;
+            border-radius: 50px;
+            margin-left: 700px;
+            
+        }
+        label{
+          color: black;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Styles pour le formulaire */
+        form {
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        select,
+        input[type="password"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 3px solid black;
+            border-radius: 30px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #5e503f;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="myForm" onsubmit="return validateForm()">
+            <label for="fname">Prénom:</label>
+            <input type="text" id="fname" name="firstname" required placeholder="flen">
+
+            <label for="lname">Nom:</label>
+            <input type="text" id="lname" name="lastname" required placeholder="ben folan">
+
+            <label for="age">Âge:</label>
+            <input type="number" id="age" name="age" min="18" required placeholder="18">
+
+            <label for="gender">Sexe:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Choisir</option>
+                <option value="male">Homme</option>
+                <option value="female">Femme</option>
+                <option value="other">Autre</option>
+            </select>
+
+            <label for="zipcode">Code Postal:</label>
+            <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" required placeholder="12345">
+            <small style="color: red;">(Format: 5 chiffres)</small>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="flenbenfolan@email.com">
+
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Soumettre">
+        </form>
+
+        <div id="errorMessages"></div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var form = document.getElementById('myForm');
+            var errorMessages = document.getElementById('errorMessages');
+            errorMessages.innerHTML = '';
+
+            var fname = form.elements['firstname'].value.trim();
+            var lname = form.elements['lastname'].value.trim();
+            var age = form.elements['age'].value;
+            var gender = form.elements['gender'].value;
+            var zipcode = form.elements['zipcode'].value.trim();
+            var email = form
+        }
+    </script>    
